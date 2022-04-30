@@ -5,9 +5,10 @@
   flex-direction: row !important;
   flex-wrap: wrap;
   width: 100%;
-
-  .label-wrapper {
+  .labels-wrapper {
     margin-bottom: 0.25rem;
+  }
+  .label-wrapper {
     color: $c-black-light;
     font-size: $fz-default;
     font-weight: $fw-simi-bold;
@@ -79,7 +80,7 @@
               border-color: $c-gray-light;
 
               .start-adornment-wrapper {
-                border-color: $c-gray-light
+                border-color: $c-gray-light;
               }
             }
           }
