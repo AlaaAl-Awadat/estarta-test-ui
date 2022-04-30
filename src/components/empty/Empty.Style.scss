@@ -1,0 +1,8 @@
+@import 'src/assets/styles/helpers/Helpers.Style.scss';
+.empty-component-wrapper {
+  @include d-flex-column-center;
+  min-height: 400px;
+  .empty-text {
+    font-weight: $fw-bold;
+  }
+}

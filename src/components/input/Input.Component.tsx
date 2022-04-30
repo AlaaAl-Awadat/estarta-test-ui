@@ -101,7 +101,7 @@ const InputComponent = ({
             )}
             <TextField
               {...autoCompleteParams}
-              {...datePickerParams}
+              // {...datePickerParams}
               autoComplete={autoComplete}
               required={isRequired}
               ref={inputRef}
@@ -206,9 +206,9 @@ InputComponent.propTypes = {
   idRef: PropTypes.string.isRequired,
   isRequired: PropTypes.bool,
   isDisabled: PropTypes.bool,
-  max: PropTypes.number,
+  max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   maxLength: PropTypes.number,
-  min: PropTypes.number,
+  min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   minLength: PropTypes.number,
   step: PropTypes.number,
   error: PropTypes.bool,

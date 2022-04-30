@@ -1,3 +1,17 @@
 {
-
+  "log-id": "رمز السجل",
+  "application-type": "نوع التطبيق",
+  "select-application-type": "-- إختر نوع التطبيق --",
+  "application-id": "رمز التطبيق",
+  "application-id-description": "مثال. 5448752",
+  "action": "الإجراء",
+  "details": "التفاصيل",
+  "date-time": "التاريخ:الوقت",
+  "employee-name": "إسم الموظف",
+  "employee-name-description": "مثال. Admin.User",
+  "action-type": "نوع الإجراء",
+  "select-action-type": "-- إختر نوع الإجراء --",
+  "from-date": "من تاريخ",
+  "to-date": "إلى تاريخ",
+  "search-logger": "بحث السجل"
 }

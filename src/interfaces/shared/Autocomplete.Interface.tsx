@@ -32,7 +32,7 @@ export interface AutocompleteInterface {
   defaultValue?: object;
   labelClasses?: string;
   isLoading: boolean;
-  value?: object | null;
+  value?: object | string | null;
   inputValue?: string;
   onInputChange?: (
     event: SyntheticEvent<Element, Event>,

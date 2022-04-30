@@ -1,4 +1,8 @@
 {
+  "language": "اللغة",
+  "en": "English",
+  "ar": "العربية",
+  "no-data-found": "لا يوجد بيانات!!!",
   "pagination": {
     "no-data-found": "لاتوجد بيانات",
     "item-per-page": "عنصر في الصفحة",

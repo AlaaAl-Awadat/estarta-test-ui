@@ -27,7 +27,7 @@ export type TextFieldProps = {
 };
 
 export interface InputInterface {
-  value?: number | string;
+  value?: number | string | Date;
   isRequired?: boolean;
   isDisabled?: boolean;
   idRef: string;
@@ -53,9 +53,9 @@ export interface InputInterface {
   onInputBlur?: (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   onKeyUp?: VoidFunction;
   onKeyDown?: VoidFunction;
-  max?: number;
+  max?: number | string;
   maxLength?: number;
-  min?: number;
+  min?: number | string;
   minLength?: number;
   step: number;
   endAdornment?: ReactNode;

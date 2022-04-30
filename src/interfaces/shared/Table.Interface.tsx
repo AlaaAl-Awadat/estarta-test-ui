@@ -31,6 +31,7 @@ export interface FooterDataInterface {
 export interface TableInterface {
   tableOptions: TableOptionsInterface;
   parentTranslationPath?: string;
+  sharedTranslationPath?: string;
   translationPath?: string;
   data: object[];
   headerData?: HeaderDataInterface[];

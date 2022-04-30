@@ -1,7 +1,8 @@
-@import '../../assets/styles/helpers/Helpers.Style.scss';
+@import 'src/assets/styles/helpers/Helpers.Style.scss';
 .btn-wrapper {
   @include d-inline-flex-center;
   font-weight: $fw-simi-bold;
+  white-space: nowrap;
   &:not([disabled]),
   &:not(.Mui-disabled) {
     &:hover {

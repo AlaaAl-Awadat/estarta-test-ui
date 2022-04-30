@@ -1,7 +1,7 @@
 import React, { FormEvent, ReactElement, useCallback, useEffect, useState } from 'react';
 import AutocompleteComponent from '../../components/autocomplete/Autocomplete.Component';
 import ButtonComponent from '../../components/button/Button.Component';
-import DatePickerComponent from '../../components/date-picker/DatePicker.Component';
+// import DatePickerComponent from '../../components/date-picker/DatePicker.Component';
 import InputComponent from '../../components/input/Input.Component';
 import TableComponent from '../../components/tables/Table.Component';
 import {
@@ -12,6 +12,8 @@ import {
 import { GetAllAdminDataService } from '../../services';
 import moment from 'moment';
 import './Administration.Style.scss';
+import i18next, { t } from 'i18next';
+import { languageChange } from '../../helpers';
 
 const parentTranslationPath = 'AdministrationPage';
 
@@ -19,6 +21,7 @@ const AdministrationPage = (): ReactElement => {
   const [data, setData] = useState<AdminDataInterface | null>(null);
   const [filteredData, setFilteredData] = useState<AdminDataAuditLogInterface[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [localLanguage, setLocalLanguage] = useState<string>(i18next.language);
   const [filters, setFilters] = useState({
     pageIndex: 0,
     pageSize: 10,
@@ -62,7 +65,6 @@ const AdministrationPage = (): ReactElement => {
     setFilteredData(
       data?.result.auditLog.filter((item) => {
         const filledItems = Object.entries(state).filter((element) => element[1]);
-        console.log(filledItems, item);
         return (
           !filledItems.length ||
           filledItems.every(
@@ -98,6 +100,25 @@ const AdministrationPage = (): ReactElement => {
 
   return (
     <div className="administration-page-wrapper pages-wrapper">
+      <div className="d-flex-h-end mb-3">
+        <div className="d-inline-flex px-2">
+          <AutocompleteComponent
+            options={i18next.languages}
+            getOptionLabel={(option) => t(`Shared:${option as string}`) || 'N/A'}
+            isOptionEqualToValue={(option, value) => (option as string) === (value as string)}
+            idRef="languageRef"
+            value={localLanguage}
+            labelValue="language"
+            inputPlaceholder="select-language"
+            disableClearable
+            parentTranslationPath="Shared"
+            onChange={(event, newValue) => {
+              setLocalLanguage(newValue as string);
+              languageChange(newValue as string);
+            }}
+          />
+        </div>
+      </div>
       <form noValidate onSubmit={filterHandler} className="filters-wrapper">
         <div className="filter-section">
           <div className="filter-item">
@@ -173,29 +194,37 @@ const AdministrationPage = (): ReactElement => {
             />
           </div>
           <div className="filter-item">
-            <DatePickerComponent
+            <InputComponent
               idRef="fromDateRef"
-              value={state.fromDate}
-              maxDate={state.toDate || undefined}
+              value={(state.fromDate && moment(state.fromDate).format('YYYY-MM-DD')) || ''}
+              max={(state.toDate && moment(state.toDate).format('YYYY-MM-DD')) || undefined}
+              type="date"
               labelValue="from-date"
               inputPlaceholder="select-date"
               parentTranslationPath={parentTranslationPath}
-              onChange={(newValue) => {
-                console.log(newValue);
-                setState((items) => ({ ...items, fromDate: (newValue && moment(newValue, 'MM/DD/YYYY').format()) || null }));
+              onInputChanged={({ target: { value } }) => {
+                console.log(value);
+                setState((items) => ({
+                  ...items,
+                  fromDate: (value && moment(value, 'YYYY-MM-DD').format()) || null,
+                }));
               }}
             />
           </div>
           <div className="filter-item">
-            <DatePickerComponent
+            <InputComponent
               idRef="toDateRef"
-              value={state.toDate}
-              minDate={state.fromDate || undefined}
+              value={(state.toDate && moment(state.toDate).format('YYYY-MM-DD')) || ''}
+              min={(state.fromDate && moment(state.fromDate).format('YYYY-MM-DD')) || undefined}
+              type="date"
               labelValue="to-date"
               inputPlaceholder="select-date"
               parentTranslationPath={parentTranslationPath}
-              onChange={(newValue) => {
-                setState((items) => ({ ...items, toDate: (newValue && moment(newValue, 'MM/DD/YYYY').format()) || null }));
+              onInputChanged={({ target: { value } }) => {
+                setState((items) => ({
+                  ...items,
+                  toDate: (value && moment(value, 'YYYY-MM-DD').format()) || null,
+                }));
               }}
             />
           </div>

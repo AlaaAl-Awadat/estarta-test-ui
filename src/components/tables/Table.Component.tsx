@@ -25,6 +25,7 @@ import EmptyComponent from '../empty/Empty.Component';
 const TableComponent = ({
   tableOptions,
   parentTranslationPath,
+  sharedTranslationPath,
   translationPath,
   data,
   headerData,
@@ -217,6 +218,7 @@ const TableComponent = ({
                 message={message}
                 parentTranslationPath={parentTranslationPath}
                 translationPath={translationPath}
+                sharedTranslationPath={sharedTranslationPath}
                 defaultMessage={defaultMessage}
               />
             )}
@@ -250,6 +252,7 @@ TableComponent.propTypes = {
   }),
   translationPath: PropTypes.string,
   parentTranslationPath: PropTypes.string,
+  sharedTranslationPath: PropTypes.string,
   dateFormat: PropTypes.string,
   sortColumnClicked: PropTypes.func,
   headerData: PropTypes.arrayOf(
@@ -307,6 +310,7 @@ TableComponent.defaultProps = {
     sortFrom: 1, // 1:front,2:do nothing only send that it change
   },
   parentTranslationPath: undefined,
+  sharedTranslationPath: undefined,
   translationPath: '',
   sortColumnClicked: undefined,
   headerData: [],

@@ -124,7 +124,12 @@
       }
     }
   }
-
+  .MuiAutocomplete-inputRoot {
+    @include rtl {
+      padding-right: 0 !important;
+      padding-left: 1rem;
+    }
+  }
   .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon {
     .MuiAutocomplete-inputRoot {
       @include rtl {
