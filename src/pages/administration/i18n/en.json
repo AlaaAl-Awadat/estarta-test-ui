@@ -1,0 +1,17 @@
+{
+  "log-id": "Log ID",
+  "application-type": "Application Type",
+  "select-application-type": "-- Select Application Type --",
+  "application-id": "Application ID",
+  "application-id-description": "e.g. 5448752",
+  "action": "Action",
+  "details": "Details",
+  "date-time": "Date:Time",
+  "employee-name": "Employee Name",
+  "employee-name-description": "e.g. Admin.User",
+  "action-type": "Action Type",
+  "select-action-type": "-- Select Action Type --",
+  "from-date": "From Date",
+  "to-date": "To Date",
+  "search-logger": "Search Logger"
+}

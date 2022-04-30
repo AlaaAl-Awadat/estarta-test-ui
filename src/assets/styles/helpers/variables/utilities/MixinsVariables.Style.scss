@@ -1,0 +1,58 @@
+$spacing-types: (
+  margin: m,
+  padding: p,
+) !default;
+$spaces: (
+  auto: auto,
+  0: 0,
+  1: 0.25,
+  2: 0.5,
+  2p5: 0.75,
+  2p85: 0.85,
+  3: 1,
+  3p5: 1.5,
+  4: 2,
+  5: 3,
+  -1: -1,
+  -2: -0.5,
+  -4: -4,
+  -8: -8,
+  8: 8,
+) !default;
+$colors: (
+  primary: $c-primary,
+  gray-light: $c-gray-light,
+  error: $c-error,
+) !default;
+$spaces-unit: rem !default;
+$widths: (
+  0: 0,
+  25: 25%,
+  33: 33.3333%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  32px: 32px,
+  40px: 40px,
+  270px: 270px,
+  320px: 320px,
+) !default;
+$heights: (
+  32px: 32px,
+) !default;
+$font-sizes: (
+  default: $fz-default,
+  10px: $fz-10px,
+  12px: $fz-12px,
+  14px: $fz-14px,
+  15px: $fz-15px,
+  22px: $fz-22px,
+  30px: $fz-30px,
+) !default;
+$font-weights: (
+  default: $fw-default,
+  bold: $fw-bold,
+  simi-bold: $fw-simi-bold,
+  medium: $fw-medium,
+  normal: $fw-normal,
+) !default;

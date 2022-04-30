@@ -1,0 +1,41 @@
+@import 'src/assets/styles/helpers/Helpers.Style';
+.pagination-component-wrapper {
+  @include d-flex-v-center-h-between;
+  flex-wrap: wrap;
+  &.is-reversed-section {
+    flex-direction: row-reverse;
+  }
+  @include tablets-max {
+    justify-content: center;
+  }
+  .pagination-section {
+    @include d-inline-flex-center;
+    .select-wrapper {
+      width: auto;
+      min-width: auto;
+      .selects {
+        min-height: 35px;
+      }
+      @include phones-s-max {
+        width: 100%;
+      }
+    }
+    .pages-text,
+    .details-wrapper,
+    .per-page-text,
+    .select-wrapper,
+    .btn-icon {
+      margin-bottom: 0.5rem;
+    }
+    flex-wrap: wrap;
+    color: $c-black-light;
+    .autocomplete-wrapper {
+      min-width: initial;
+      width: 80px;
+      margin: 0 .5rem .5rem;
+    }
+    .details-wrapper{
+      @include d-inline-flex-v-center;
+    }
+  }
+}

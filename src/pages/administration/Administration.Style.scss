@@ -1,0 +1,17 @@
+@import 'src/assets/styles/helpers/Helpers.Style';
+.filters-wrapper {
+  @include d-flex-v-center-h-between;
+  flex-wrap: wrap;
+  .filter-section {
+    @include d-inline-flex;
+    flex-wrap: wrap;
+    .filter-item {
+      @include d-inline-flex;
+      padding: 0 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .btn-wrapper {
+      margin: 0 0.5rem 1rem;
+    }
+  }
+}

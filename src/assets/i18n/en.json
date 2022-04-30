@@ -1,0 +1,12 @@
+{
+    "pagination": {
+        "no-data-found": "No Data Found",
+        "item-per-page": "Item Per Page",
+        "of": "of",
+        "pages": "Pages",
+        "previous-page": "Previous Page",
+        "next-page": "Next Page",
+        "first-page": "First Page",
+        "last-page": "Last Page"
+      }
+}

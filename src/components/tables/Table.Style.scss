@@ -1,0 +1,220 @@
+// Start Table Actions Tooltip
+@import 'src/assets/styles/helpers/Helpers.Style';
+
+.tables-content-wrapper {
+  padding: 0 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  .tables-content {
+    box-shadow: 0 0 0.5rem 0px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 1rem 1rem;
+    .table-responsive {
+      position: relative;
+
+      .MuiTableContainer-root {
+        overflow-y: auto;
+        border-radius: 0.5rem 0.5rem 0 0;
+        background-color: $c-white;
+      }
+      .table-wrapper {
+        &.MuiTable-root {
+          .MuiTableCell-root {
+            //padding: 0.5rem;
+            height: 40px;
+            border-bottom: 0;
+            font-family: $ff-default;
+            white-space: nowrap;
+            @include rtl {
+              text-align: right;
+            }
+
+            &[draggable='true'] {
+              cursor: move;
+            }
+
+            &.checkboxes-cell {
+              .form-control-label {
+                margin: 0;
+              }
+            }
+
+            &.drag-over-cell {
+              box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, 0.2);
+              border-radius: 0.25rem 0.25rem 0 0;
+            }
+          }
+
+          .MuiTableHead-root {
+            .MuiTableRow-head {
+              .MuiTableCell-head {
+                background-color: $c-gray-lightest;
+                border-bottom: 1px solid $c-gray-lighter;
+                position: sticky;
+                top: 0;
+                color: $c-black-light;
+                font-size: $fz-table-header;
+                font-weight: $fw-simi-bold;
+                z-index: 2 !important;
+                width: 50px;
+                .MuiTableSortLabel-root {
+                  .MuiSvgIcon-root {
+                    margin: 0 0.5rem;
+                  }
+                  &.Mui-active {
+                    .MuiSvgIcon-root {
+                      color: $c-primary;
+                      background-color: $c-gray-lighter;
+                      border-radius: 100%;
+                      padding: 0.15rem;
+                    }
+                  }
+                }
+
+                &:first-child {
+                  border-top-left-radius: 0.5rem;
+
+                  @include rtl {
+                    border-top-right-radius: 0.5rem;
+                    border-top-left-radius: 0;
+                  }
+                }
+
+                &.actions-cell,
+                &.checkboxes-cell {
+                  text-align: center;
+                  width: 50px;
+                }
+
+                &:last-child {
+                  border-top-right-radius: 0.5rem;
+
+                  @include rtl {
+                    border-top-right-radius: 0;
+                    border-top-left-radius: 0.5rem;
+                  }
+                }
+
+                .resize-btn {
+                  width: 10px;
+                  height: 100%;
+                  cursor: col-resize;
+                  position: absolute;
+                  z-index: 1;
+                  min-height: 37px;
+                  top: 0;
+                  right: 0;
+                  @include rtl {
+                    right: initial;
+                    left: 0;
+                  }
+                  background-color: transparent;
+
+                  &:hover {
+                    box-shadow: inset 0 0 0.25rem 0.25rem rgba($c-primary, 0.25);
+                  }
+                }
+              }
+            }
+          }
+
+          .MuiTableBody-root {
+            .MuiTableRow-root {
+              .MuiTableCell-body {
+                height: 40px;
+                background-color: $c-white;
+                color: $c-black-light;
+                font-size: $fz-table-footer;
+                font-weight: $fw-bold;
+
+                &.actions-cell-wrapper {
+                  text-align: center;
+                }
+              }
+
+              //&:nth-child(odd) {
+              //  .MuiTableCell-body {
+              //    background-color: white !important;
+              //  }
+              //}
+
+              .MuiTableCell-body {
+                border-bottom: 1px solid $c-gray-lighter;
+
+                &.checkboxes-cell {
+                  text-align: center;
+                  width: 50px;
+                }
+              }
+
+              &:hover,
+              &.table-row-overlay {
+                .MuiTableCell-body {
+                  background-color: #e8f0ff !important;
+                }
+              }
+            }
+          }
+
+          .MuiTableFooter-root {
+            .MuiTableRow-footer {
+              .MuiTableCell-footer {
+                background-color: $c-gray-lighter;
+                color: $c-black-light;
+                font-size: $fz-table-footer;
+              }
+            }
+          }
+
+          &.theme-original {
+            .MuiTableHead-root {
+              .MuiTableRow-head {
+                .MuiTableCell-head {
+                  background-color: $c-primary;
+                  color: $c-white;
+                }
+              }
+            }
+
+            .MuiTableBody-root {
+              .MuiTableRow-root {
+                .MuiTableCell-body {
+                  background-color: $c-white;
+                  color: $c-black-light;
+                }
+
+                &:nth-child(even) {
+                  .MuiTableCell-body {
+                    background-color: $c-gray-lightest;
+                  }
+                }
+
+                &:hover,
+                &.table-row-overlay {
+                  .MuiTableCell-body {
+                    background-color: $c-blue-lightest;
+                  }
+                }
+              }
+            }
+
+            .MuiTableFooter-root {
+              .MuiTableRow-footer {
+                .MuiTableCell-footer {
+                  background-color: $c-blue-lighter;
+                  color: $c-white;
+                  font-size: $fz-table-footer;
+                }
+              }
+            }
+          }
+        }
+      }
+      .pagination-component-wrapper {
+        padding: 0.5rem;
+        background-color: $c-white;
+        border-radius: 0 0 1rem 1rem;
+      }
+    }
+  }
+}

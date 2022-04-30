@@ -1,0 +1,128 @@
+// ======================================================== Start Custom Themes
+@import './utilities/Fonts.Style';
+@import './utilities/Scrollbar.Style.scss';
+// ======================================================== End Custom Themes
+//========================================================= Start Main Tags Override
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  outline: 0 !important;
+}
+
+html {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: $c-gray-lightest;
+  font-size: $fz-default;
+  font-family: $ff-default !important;
+  color: $c-black-light;
+  min-width: 320px;
+  margin: 0;
+  padding: 0 !important;
+  font-weight: $fw-normal;
+
+  &.rtl {
+    text-align: right;
+    font-family: $ff-default-rtl !important;
+  }
+}
+
+#root > .container {
+  width: 100%;
+  padding: 0;
+}
+
+// @include rtl-in {
+//   .MuiPickersCalendarHeader-iconButton {
+//     .MuiSvgIcon-root {
+//       transform: scale(-1);
+//     }
+//   }
+// }
+
+// label {
+//   margin-bottom: 0;
+// }
+
+// p,
+// label {
+//   font-weight: 300;
+// }
+
+// ========================================================= End Main Tags Override
+// ======================================================== Start Global Override
+.MuiTouchRipple-root {
+  .MuiTouchRipple-ripple {
+    color: $c-blue-lightest;
+  }
+}
+
+.MuiTypography-body1,
+.MuiButtonBase-root,
+.MuiFormControl-root,
+.MuiSelect-root,
+.autocomplete,
+.MuiFormLabel-root,
+.MuiChip-label,
+.MuiInputBase-input,
+.MuiTableCell-root,
+.MuiTypography-root,
+.MuiOutlinedInput-notchedOutline legend {
+  font-family: $ff-default !important;
+  @include rtl {
+    font-family: $ff-default-rtl !important;
+  }
+  font-size: $fz-default;
+}
+
+.mdi {
+  @include rtl {
+    transform: scaleX(-1);
+  }
+}
+// ======================================================== End Global Override
+// ======================================================== Start Global Views
+@import './utilities/GlobalViews.Style.scss';
+// ======================================================== End Global Views
+// ======================================================== Start Display
+@import './utilities/Display.Style.scss';
+// ======================================================== End Display
+// ======================================================== Start Positions
+@import './utilities/Positions.Style.scss';
+// ======================================================== End Positions
+// ======================================================== Start Borders
+@import './utilities/Borders.Style.scss';
+// ======================================================== End Borders
+// ========================================================= Start Texts Classes
+@import './utilities/Texts.Style.scss';
+// ========================================================= End Texts Classes
+// ========================================================= Start Separators Classes
+@import './utilities/Separators.Style.scss';
+// ========================================================= End Separators Classes
+// ======================================================== Start Font Sizes
+@include font-sizes;
+// ======================================================== End Font Sizes
+// ======================================================== Start Font Weights
+@include font-weights;
+// ======================================================== End Font Weights
+// ======================================================== Start Widths
+@include widths;
+// ======================================================== End Widths
+// ======================================================== Start Heights
+@include heights;
+// ======================================================== End Heights
+// ======================================================== Start Margins & Padding
+@include padding-marin-loop;
+// ======================================================== End Margins & Padding
+// ======================================================== Start Colors
+@include colors-loop;
+// ======================================================== End Colors

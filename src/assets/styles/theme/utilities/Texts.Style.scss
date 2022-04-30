@@ -1,0 +1,9 @@
+.texts-nowrap {
+  white-space: nowrap;
+}
+.texts-truncate {
+  @include texts-truncate;
+}
+.wb-break-all {
+  word-break: break-all;
+}

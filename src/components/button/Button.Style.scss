@@ -1,0 +1,55 @@
+@import '../../assets/styles/helpers/Helpers.Style.scss';
+.btn-wrapper {
+  @include d-inline-flex-center;
+  font-weight: $fw-simi-bold;
+  &:not([disabled]),
+  &:not(.Mui-disabled) {
+    &:hover {
+      background-color: $c-secondary;
+      color: $c-primary;
+    }
+  }
+  &.btn-icon {
+    border-radius: 100%;
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+    &.theme-transparent {
+      color: $c-black-light;
+      background-color: transparent;
+    }
+  }
+  &.btn-width,
+  &.btn {
+    padding: 0.25rem 0.5rem;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 0.25rem;
+    &.theme-transparent {
+      background-color: transparent;
+      color: $c-black-light;
+      &:not(.Mui-disabled) {
+        &:hover,
+        &.active {
+          background-color: $c-secondary;
+        }
+      }
+    }
+    &.theme-solid {
+      background-color: $c-primary;
+      color: $c-white;
+    }
+  }
+  &.btn-width {
+    min-width: 100px;
+  }
+
+  &.Mui-disabled,
+  &[disabled] {
+    background-color: $c-gray !important;
+    border-color: $c-gray !important;
+    cursor: not-allowed;
+    pointer-events: initial;
+    color: $c-white !important;
+  }
+}

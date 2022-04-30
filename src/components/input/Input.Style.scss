@@ -1,0 +1,130 @@
+@import 'src/assets/styles/helpers/Helpers.Style.scss';
+
+.input-wrapper {
+  @include d-inline-flex-v-center;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .label-wrapper {
+    margin-bottom: 0.25rem;
+    color: $c-black-light;
+    font-size: $fz-default;
+    font-weight: $fw-simi-bold;
+  }
+
+  &.theme-solid {
+    .text-field-wrapper {
+      @include d-flex;
+      width: 100%;
+
+      .before-icon-classes-wrapper,
+      .after-icon-classes-wrapper {
+        margin: 0 0.5rem;
+      }
+
+      .input {
+        width: 100%;
+        @include d-flex-h-center;
+        padding: 0;
+
+        .MuiInputLabel-formControl {
+          &:not(.MuiInputLabel-shrink) {
+            top: 20px;
+          }
+        }
+
+        .MuiInputBase-root {
+          min-height: 40px;
+          width: 100%;
+          background-color: $c-white;
+          border: 1px solid $c-gray-light;
+          color: $c-black-light;
+          border-radius: 0.35rem;
+          @include d-flex-v-center-h-between;
+          flex-wrap: nowrap;
+          &:before {
+            content: initial;
+          }
+
+          .end-adornment-wrapper,
+          .start-adornment-wrapper {
+            @include d-inline-flex-center;
+            flex: 0 0 auto;
+            height: 100%;
+            min-width: 40px;
+            padding: 0 0.5rem;
+          }
+
+          .start-adornment-wrapper {
+            border-right: 1px solid $c-gray-light;
+            @include rtl {
+              border-right-width: 0;
+              border-left: 1px solid $c-gray-light;
+            }
+          }
+
+          .end-adornment-wrapper {
+            border-left: 1px solid $c-gray-light;
+            min-height: 40px;
+            @include rtl {
+              border-left-width: 0;
+              border-right: 1px solid $c-gray-light;
+            }
+          }
+
+          &.Mui-focused,
+          &:hover {
+            &:not(.Mui-disabled) {
+              border-color: $c-gray-light;
+
+              .start-adornment-wrapper {
+                border-color: $c-gray-light
+              }
+            }
+          }
+        }
+
+        .MuiInputBase-input {
+          color: $c-black-light;
+          font-size: $fz-14px;
+          width: 100%;
+          padding: 0.25rem 1rem;
+
+          &::placeholder {
+            color: $c-black-light;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  .Mui-error {
+    &.MuiInputBase-root {
+      border-color: $c-error !important;
+
+      .mdi {
+        color: $c-error !important;
+      }
+
+      .MuiInputBase-input {
+        color: $c-error !important;
+
+        &::placeholder {
+          color: $c-error !important;
+        }
+      }
+    }
+  }
+
+  .MuiFormHelperText-root {
+    @include rtl {
+      text-align: right;
+    }
+  }
+
+  .characters-counter-wrapper {
+    padding: 0.25rem 0.5rem;
+  }
+}

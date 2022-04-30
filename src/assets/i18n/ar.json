@@ -1,0 +1,12 @@
+{
+  "pagination": {
+    "no-data-found": "لاتوجد بيانات",
+    "item-per-page": "عنصر في الصفحة",
+    "of": "من",
+    "pages": "الصفحات",
+    "previous-page": "الصفحة السابقة",
+    "next-page": "الصفحة التالية",
+    "first-page": "الصفحة الأولى",
+    "last-page": "الصفحة الأخيرة"
+  }
+}

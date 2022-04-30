@@ -1,0 +1,32 @@
+@mixin colors-loop {
+  @each $prop, $value in $colors {
+    .c-#{$prop} {
+      color: $value !important;
+    }
+    .c-#{$prop}-before {
+      &::before {
+        color: $value !important;
+      }
+    }
+    .b-#{$prop} {
+     border-color: $value !important;
+    }
+    .bg-#{$prop} {
+      background-color: $value !important;
+    }
+    .c-#{$prop}-hover {
+      &:not([disabled]), &:not(.Mui-disabled) {
+        &:hover {
+          color: $value !important;
+        }
+      }
+    }
+    .bg-#{$prop}-hover {
+      background-color: $value !important;
+
+      &:hover {
+        background-color: $value !important;
+      }
+    }
+  }
+}
