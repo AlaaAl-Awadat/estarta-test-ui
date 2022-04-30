@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import './Table.Style.scss';
 import moment from 'moment';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
 import { PaginationEnum } from '../../enums';
 import {
   Table,
@@ -180,13 +179,13 @@ const TableComponent = ({
                                               getDataFromObject(row, column.input) as string,
                                               moment.ISO_8601
                                             ).isValid() &&
-                                            moment(getDataFromObject(row, column.input) as string)
-                                              .locale(i18next.language)
-                                              .format(
-                                                column.dateFormat ||
-                                                  tableOptions.dateFormat ||
-                                                  dateFormat
-                                              )) ||
+                                            moment(
+                                              getDataFromObject(row, column.input) as string
+                                            ).format(
+                                              column.dateFormat ||
+                                                tableOptions.dateFormat ||
+                                                dateFormat
+                                            )) ||
                                             '')) ||
                                           (column.component &&
                                             column.component(row, rowIndex, column, columnIndex)) ||

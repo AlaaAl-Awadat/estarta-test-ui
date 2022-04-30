@@ -203,7 +203,6 @@ const AdministrationPage = (): ReactElement => {
               inputPlaceholder="select-date"
               parentTranslationPath={parentTranslationPath}
               onInputChanged={({ target: { value } }) => {
-                console.log(value);
                 setState((items) => ({
                   ...items,
                   fromDate: (value && moment(value, 'YYYY-MM-DD').format()) || null,

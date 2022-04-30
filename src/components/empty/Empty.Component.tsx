@@ -13,7 +13,6 @@ const EmptyComponent = ({
   translationPath,
 }: EmptyInterface): ReactElement => {
   const { t } = useTranslation<string>(parentTranslationPath);
-  console.log('t', t);
   return (
     <div className="empty-component-wrapper">
       <img
