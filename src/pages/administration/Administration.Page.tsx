@@ -57,7 +57,7 @@ const AdministrationPage = (): ReactElement => {
     setFilters((items) => ({ ...items, pageIndex }));
   };
   const onPageSizeChanged = (pageSize: number) => {
-    setFilters((items) => ({ ...items, pageSize }));
+    setFilters((items) => ({ ...items, pageIndex: 0, pageSize }));
   };
 
   const filterHandler = (event: FormEvent<HTMLFormElement>): void => {
